@@ -78,6 +78,26 @@ public class HelloWorld {
         System.out.println(num);
 //        print 2147483647
 
+//        String name = "codeup";
+//        System.out.println(name);
+//        System.out.print(name);
+//        System.out.print(name);
+//        System.out.print(name);
+//       using println will be blocked, print will print in one line
+
+//        String name = "codeup";
+//        System.out.printf("Hello there, %s. Nice to see you.%n", name);
+//        %s will be where variable starts and %n will be where variable ends
+
+//        String greeting = "Salutations";
+//        String name = "codeup";
+//        System.out.printf("%s, %s!", greeting, name);
+
+
+
+
+
+
     }
 }
 
