@@ -46,25 +46,31 @@ public class ScannerExercise{
 //        String userInputStr = scanner.next();
 //        System.out.println("You entered: --> \"" + userInputStr + "\" <--");
 ////Print only before space
-//
+
 //        String userInputString = scanner.nextLine();
 //        System.out.println("You entered: --> \"" + userInputString + "\" <--");
-//        //Print the entire input
+        //Print the entire input
 
 //Finding area and parameter of the room
         System.out.print("Enter the length of your room: ");
         String inputLength = scanner.next();
-        double length = Double.parseDouble(inputLength);
+//        int length =Integer.parseInt(inputLength);
+//        double length = Double.parseDouble(inputLength);
 //        int length = scanner.nextInt();
+        double length = Double.parseDouble(inputLength);
 
         System.out.print("Enter the width of your room: ");
         String inputWidth= scanner.next();
         double width = Double.parseDouble(inputWidth);
+
+//        double width = scanner.nextDouble();//Double.parseDouble(inputWidth);
+
 //        int width = scanner.nextInt();
 
         System.out.print("Enter the height of your room: ");
         String inputHeight= scanner.next();
         double height = Double.parseDouble(inputHeight);
+
 //        int height = scanner.nextInt();
 
         double area = length * width;
@@ -74,12 +80,12 @@ public class ScannerExercise{
 //        int volume = length * width * height;
 
 
-        System.out.println("Area of the room: %d%n" + area);
-        System.out.println("Perimeter of the room: %d%n" + perimeter);
+        System.out.println("Area of the room: " + area);
+        System.out.println("Perimeter of the room: " + perimeter);
 
 //Finding the Volume of the room
         double volume = length * width * height;
-        System.out.println("Volume of the room: %d%n " + volume);
+        System.out.println("Volume of the room: " + volume);
 
 //BONUS
 //        After using scanner.useDelimiter("\n");
