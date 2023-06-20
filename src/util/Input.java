@@ -50,4 +50,6 @@ public class Input {
         System.out.println(Input.getDouble());
 
     }
+
+
 }
