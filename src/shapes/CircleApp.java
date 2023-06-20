@@ -21,7 +21,7 @@ public class CircleApp {
 //            Asking user if they want to make more circle
             System.out.println("Would you like to create another circle?");
             scanner.nextLine();
-            nextCircle= input.yesNo();
+            nextCircle= input.yesNo("");
             totalCircle++;
             System.out.println("Total circles you made was : " + getTotalCircle());
 
