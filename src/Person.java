@@ -1,5 +1,5 @@
 public class Person {
-    private String name;
+    String name;
 //    constructor
     public Person(String name){
         this.name= name;

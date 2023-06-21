@@ -56,8 +56,5 @@ public class Input {
 
         System.out.println("What is your favorite decimal number? : ");
         System.out.println(Input.getDouble("Any Decimal"));
-
     }
-
-
 }
