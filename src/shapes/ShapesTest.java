@@ -10,5 +10,10 @@ public class ShapesTest {
         System.out.println("Rectangle Area : " +rectangle.getArea());
         System.out.println("Rectangle Perimeter : " +rectangle.getPerimeter());
 
+        Rectangle box1 = new Rectangle(4,5);
+        System.out.println("Box-1 Area : " + box1.getArea());
+        System.out.println("Box-1 Perimeter : " +box1.getPerimeter());
+
+
     }
 }
