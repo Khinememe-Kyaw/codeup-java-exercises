@@ -46,8 +46,26 @@ public class GradesApplication {
         for (Student studentName : students.values()) {
             System.out.print("|" + studentName.getName() + "| ");
         }
-    }
-}
+        Scanner scanner = new Scanner(System.in);
+        String userInput;
+        do {
+            System.out.print("\n\nWhat student would you like to see more information on?\n> ");
+                userInput = scanner.nextLine();
+                if (students.containsKey(userInput)) {
+                    Student student = students.get(userInput);
+                    System.out.println("\nName: " + student.getName() + " - GitHub Username: " + userInput);
+                    System.out.println("Current Average: " + student.getGradeAverage());
+                } else {
+                    System.out.println("\nSorry, no student found with the GitHub username of \"" + userInput + "\".");
+                }
+            System.out.print("\nWould you like to see another student?\n> ");
+            userInput = scanner.nextLine();
+        }
+                while(userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")|| userInput.equalsIgnoreCase("ok"));
+                System.out.println("\nGoodbye, and have a wonderful day!");
+            }
+        }
+
 
 
 
