@@ -11,6 +11,7 @@ public class StudentTest {
         student.addGrades(75);
         student.addGrades(78);
 
+        System.out.println(student.getGrades());
 
         System.out.printf("Student Grade Avg is: %.2f%n", student.getGradeAverage());
 

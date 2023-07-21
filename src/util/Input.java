@@ -3,58 +3,68 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private static Scanner scanner= new Scanner(System.in);
+    private static Scanner scanner;
 
-    public static String getString(String prompt){
-        System.out.print(prompt);
+    public Input() {
+        this.scanner = new Scanner(System.in);
+    }
+
+    public static String getString() {
         return scanner.nextLine();
     }
-    public static boolean yesNo(String prompt){
-        String input = getString("");
-        return input.equalsIgnoreCase("yes")|| input.equalsIgnoreCase("y");
+
+    public boolean yesNo() {
+        String input = scanner.nextLine().trim().toLowerCase();
+        return input.equals("y") || input.equals("yes");
     }
-    public static int getInt(int min, int max, String prompt){
-        int num = getInt(prompt);
-        while( num<= min || num>=max){
-            System.out.printf("Please enter a number between %d and %d : ", min, max, prompt);
-            num =getInt(prompt);
-        }
+
+    public int getInt(int min, int max) {
+        int num;
+        do {
+            System.out.print("Enter an integer between " + min + " and " + max + ": ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Invalid input! Please enter an integer.");
+                scanner.next();
+            }
+            num = scanner.nextInt();
+        } while (num < min || num > max);
+        scanner.nextLine(); // Clear the newline character from the buffer
         return num;
     }
-    public static int getInt(String prompt){
-       return  scanner.nextInt();
-    }
-    public static double getDouble(double min, double max, String prompt){
-        System.out.print(prompt);
-        double decNum =getDouble(prompt);
-        while(decNum<= min || decNum >= max){
-            System.out.printf("Please enter the decimal num between %s and %s : ", min, max);
-            decNum=getDouble(prompt);
+
+    public int getInt() {
+        System.out.print("Enter an integer: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Invalid input! Please enter an integer.");
+            scanner.next();
         }
-        return decNum;
+        int num = scanner.nextInt();
+        scanner.nextLine(); // Clear the newline character from the buffer
+        return num;
     }
-    public static double getDouble(String prompt){
-        System.out.print(prompt);
-        return scanner. nextDouble();
+
+    public double getDouble(double min, double max) {
+        double num;
+        do {
+            System.out.print("Enter a decimal number between " + min + " and " + max + ": ");
+            while (!scanner.hasNextDouble()) {
+                System.out.println("Invalid input! Please enter a decimal number.");
+                scanner.next();
+            }
+            num = scanner.nextDouble();
+        } while (num < min || num > max);
+        scanner.nextLine(); // Clear the newline character from the buffer
+        return num;
     }
-//String prompt allow to display a prompt that can add more instruction
-    public static void main (String[] args){
-        System.out.print("Type your name: ");
-        System.out.println(Input.getString("Both First and Last Name"));
 
-        System.out.print("Would you like to continue answering questions? : ");
-        System.out.println(Input.yesNo("yes/no"));
-
-        System.out.print("Enter a number between 1 and 10 : ");
-        System.out.println(Input.getInt(1,10, "Type only one number between 1 to 10"));
-
-        System.out.println("What is your favorite number? : ");
-        System.out.println(Input.getInt("Whole number"));
-
-        System.out.println("Enter a decimal number between 0.0 to 10.0");
-        System.out.println(Input.getDouble(0.0,10.0, "Decimal between 0.0 to 10.0"));
-
-        System.out.println("What is your favorite decimal number? : ");
-        System.out.println(Input.getDouble("Any Decimal"));
+    public double getDouble() {
+        System.out.print("Enter a decimal number: ");
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Invalid input! Please enter a decimal number.");
+            scanner.next();
+        }
+        double num = scanner.nextDouble();
+        scanner.nextLine(); // Clear the newline character from the buffer
+        return num;
     }
 }

@@ -54,6 +54,7 @@ public class GradesApplication {
                 if (students.containsKey(userInput)) {
                     Student student = students.get(userInput);
                     System.out.println("\nName: " + student.getName() + " - GitHub Username: " + userInput);
+                    System.out.println("All the grades are : " +student.getGrades());
                     System.out.println("Current Average: " + student.getGradeAverage());
                 } else {
                     System.out.println("\nSorry, no student found with the GitHub username of \"" + userInput + "\".");
@@ -62,7 +63,13 @@ public class GradesApplication {
             userInput = scanner.nextLine();
         }
                 while(userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")|| userInput.equalsIgnoreCase("ok"));
-                System.out.println("\nGoodbye, and have a wonderful day!");
+                System.out.print(("Would you like to see overall class Average? : "));
+                userInput= scanner.nextLine();
+                if(userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")|| userInput.equalsIgnoreCase("ok")){
+                    
+                }else {
+                    System.out.println("\nGoodbye, and have a wonderful day!");
+                }
             }
         }
 
